@@ -13,7 +13,8 @@ var _is_sprinting: bool = false
 var _has_landed: bool = true
 var _wall_grab_timer: float = 0.0
 var _wall_grab_limit: int = 1
-var _wall_slide_gravity: float = 200.0
+var _wall_slide_gravity: float = 100.0
+var _is_wall_grabbing: bool = false
 
 func _ready() -> void:
 	_jump_cancel_threshold = jump_height / 4
@@ -34,20 +35,25 @@ func _cancel_jump():
 		velocity.y = _jump_cancel_threshold
 
 func _physics_process(delta: float) -> void:
-	_handle_aerial_states(delta)
+	var horizontal_input_direction = Input.get_axis("ui_left", "ui_right")
+	_handle_aerial_states(horizontal_input_direction, delta)
 	
-	_handle_movement(Input.get_axis("ui_left", "ui_right"), delta)
+	_handle_movement(horizontal_input_direction, delta)
 	
 	move_and_slide()
 	
-func _handle_aerial_states(delta):
+func _handle_aerial_states(direction, delta):
 	if is_on_floor():
 		_set_landing_states()
-	elif is_on_wall_only():
+	elif is_on_wall_only() and direction != 0:
 		_handle_wall_sliding(delta)
 	else:
-		_apply_gravity(delta, gravity)
+		_handle_falling(delta)
 		
+func _handle_falling(delta):
+	if _is_wall_grabbing:
+		_wall_grab_timer = _wall_grab_limit
+	_apply_gravity(delta, gravity)
  
 func _handle_movement(direction: float, delta: float) -> void:
 	if direction != 0:
@@ -67,11 +73,17 @@ func _set_landing_states():
 		_wall_grab_timer = 0.0
 		
 func _handle_wall_sliding(delta):
+	_is_sprint_jumping = false
 	if _wall_grab_timer < _wall_grab_limit and velocity.y >= 0.0:
+		_is_wall_grabbing = true
 		_wall_grab_timer += delta
 		velocity.y = 0.0
-	else:
+	elif _is_wall_grabbing:
+		_is_wall_grabbing = false
 		_apply_gravity(delta, _wall_slide_gravity)
+	else:
+		_is_wall_grabbing = false
+		_apply_gravity(delta, gravity)
 	
 func _apply_gravity(delta: float, gravity: float) -> void:
 	velocity.y += gravity * delta
