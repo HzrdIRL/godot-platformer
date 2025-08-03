@@ -5,6 +5,22 @@
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Wall" parent="." instance=ExtResource("2_uu6xs")]
+position = Vector2(616, -58)
+scale = Vector2(1, 23.0202)
+
+[node name="Wall2" parent="." instance=ExtResource("2_uu6xs")]
+position = Vector2(485, -157)
+scale = Vector2(1, 23.0202)
+
+[node name="Wall3" parent="." instance=ExtResource("2_uu6xs")]
+position = Vector2(616, -224)
+scale = Vector2(1, 23.0202)
+
+[node name="Wall4" parent="." instance=ExtResource("2_uu6xs")]
+position = Vector2(358, -213)
+scale = Vector2(11.68, 7.612)
+
 [node name="Player" parent="." instance=ExtResource("1_glv2v")]
 position = Vector2(0, -16)
 scale = Vector2(1.00374, 1)

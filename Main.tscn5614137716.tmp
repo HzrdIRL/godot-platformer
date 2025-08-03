@@ -1,0 +1,122 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7xw887xibofy"]
+
+[ext_resource type="PackedScene" uid="uid://c4oj0ndmwvkpy" path="res://src/Player.tscn" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://b5egm135vj4hm" path="res://src/platform.tscn" id="2_uu6xs"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Wall" parent="." instance=ExtResource("2_uu6xs")]
+position = Vector2(616, -58)
+scale = Vector2(1, 23.0202)
+
+[node name="Wall2" parent="." instance=ExtResource("2_uu6xs")]
+position = Vector2(485, -157)
+scale = Vector2(1, 23.0202)
+
+[node name="Wall3" parent="." instance=ExtResource("2_uu6xs")]
+position = Vector2(616, -224)
+scale = Vector2(1, 23.0202)
+
+[node name="Wall4" parent="." instance=ExtResource("2_uu6xs")]
+position = Vector2(358, -213)
+scale = Vector2(11.68, 7.612)
+
+[node name="Player" parent="." instance=ExtResource("1_glv2v")]
+position = Vector2(0, -16)
+scale = Vector2(1.00374, 1)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Node2D" parent="Node" instance=ExtResource("2_uu6xs")]
+position = Vector2(0, 20)
+
+[node name="Node2D2" parent="Node" instance=ExtResource("2_uu6xs")]
+position = Vector2(20, 20)
+
+[node name="Node2D3" parent="Node" instance=ExtResource("2_uu6xs")]
+position = Vector2(-20, 20)
+
+[node name="Node2D4" parent="Node" instance=ExtResource("2_uu6xs")]
+position = Vector2(60, 20)
+
+[node name="Node2D5" parent="Node" instance=ExtResource("2_uu6xs")]
+position = Vector2(80, 20)
+
+[node name="Node2D6" parent="Node" instance=ExtResource("2_uu6xs")]
+position = Vector2(40, 20)
+
+[node name="Node2" type="Node" parent="."]
+
+[node name="Node2D" parent="Node2" instance=ExtResource("2_uu6xs")]
+position = Vector2(155, 20)
+
+[node name="Node2D2" parent="Node2" instance=ExtResource("2_uu6xs")]
+position = Vector2(175, 20)
+
+[node name="Node2D3" parent="Node2" instance=ExtResource("2_uu6xs")]
+position = Vector2(135, 20)
+
+[node name="Node2D4" parent="Node2" instance=ExtResource("2_uu6xs")]
+position = Vector2(215, 20)
+
+[node name="Node2D5" parent="Node2" instance=ExtResource("2_uu6xs")]
+position = Vector2(235, 20)
+
+[node name="Node2D6" parent="Node2" instance=ExtResource("2_uu6xs")]
+position = Vector2(195, 20)
+
+[node name="Node3" type="Node" parent="."]
+
+[node name="Node2D" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(275, 20)
+
+[node name="Node2D2" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(295, 20)
+
+[node name="Node2D3" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(255, 20)
+
+[node name="Node2D4" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(335, 20)
+
+[node name="Node2D5" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(355, 20)
+
+[node name="Node2D6" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(315, 20)
+
+[node name="Node2D7" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(395, 20)
+
+[node name="Node2D8" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(415, 20)
+
+[node name="Node2D9" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(375, 20)
+
+[node name="Node2D10" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(455, 20)
+
+[node name="Node2D11" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(475, 20)
+
+[node name="Node2D12" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(435, 20)
+
+[node name="Node2D13" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(516, 20)
+
+[node name="Node2D14" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(536, 20)
+
+[node name="Node2D15" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(496, 20)
+
+[node name="Node2D16" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(576, 20)
+
+[node name="Node2D17" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(596, 20)
+
+[node name="Node2D18" parent="Node3" instance=ExtResource("2_uu6xs")]
+position = Vector2(556, 20)
